@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/blue4"
+    android:id="@+id/clMainActivity">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       android:background="@color/gray4"
+       android:id="@+id/clTitleBar_Main"
+       app:layout_constraintStart_toStartOf="parent">
+
+
+
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:text="PART TRACE SCANNER"
+          android:id="@+id/tvTitle_Main"
+          android:textAlignment="center"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent">
+      </TextView>
+
+      <CheckBox
+          android:id="@+id/cb_MAIN_PARTTRACEDB"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:onClick="cbSQLStatus_Click"
+          android:text="SQL"
+          android:textColor="@color/gray1"
+          app:layout_constraintStart_toStartOf="parent"></CheckBox>
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/btnSettings"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:backgroundTint="@color/gray1"
+          android:clickable="true"
+          android:onClick="btnSettings_Click"
+          android:src="@drawable/ic_action_settings"
+          app:fabSize="mini"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <Button
+       android:id="@+id/btnTakePic"
+       android:layout_width="150dp"
+       android:layout_height="80dp"
+       android:layout_margin="10dp"
+       android:onClick="btnTakePicture_Click"
+       android:text="TAKE NEW PICTURE"
+       app:layout_constraintEnd_toStartOf="@id/btnUpload"
+       android:backgroundTint="@color/blue3"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/clTitleBar_Main"></Button>
+
+   <Button
+       android:id="@+id/btnUpload"
+       android:layout_width="150dp"
+       android:layout_height="80dp"
+       android:layout_margin="10dp"
+       android:onClick="btnUploadPicture_Click"
+       android:text="UPLOAD PICTURE"
+       android:visibility="visible"
+       android:backgroundTint="@color/gray3"
+       android:textColor="@color/white"
+       android:enabled="false"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toEndOf="@id/btnTakePic"
+       app:layout_constraintTop_toBottomOf="@id/clTitleBar_Main"></Button>
+
+   <ImageView
+       android:id="@+id/imgPreview"
+       android:layout_width="300dp"
+       android:layout_height="500dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.495"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/btnTakePic"
+       app:layout_constraintVertical_bias="0.443"></ImageView>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:id="@+id/tvResult"
+      app:layout_constraintTop_toBottomOf="@id/imgPreview"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+       android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"></TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
